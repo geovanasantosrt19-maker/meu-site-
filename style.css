@@ -1,0 +1,516 @@
+/* ============ CORES E FONTES (mude aqui e o site inteiro muda) ============ */
+:root {
+    --fundo: #150d11;
+    --fundo-claro: #1e1319;
+    --borda: #35232b;
+    --texto: #f6eaee;
+    --texto-suave: #c2a9b2;
+    --rosa: #e99aaa;
+    --rosa-claro: #f6c3cf;
+    --papel: #f7efe9;
+
+    --fonte-titulo: 'Bungee', sans-serif;
+    --fonte-texto: 'Nunito', Arial, sans-serif;
+}
+
+/* ============ CONFIGURAÇÕES GERAIS ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: var(--fonte-texto);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+body.travado {
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+}
+
+:focus-visible {
+    outline: 2px solid var(--rosa);
+    outline-offset: 3px;
+}
+
+
+/* ============ CABEÇALHO ============ */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 6%;
+
+    background-color: rgba(21, 13, 17, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+    color: var(--rosa);
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+}
+
+/* MENU */
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+nav a:hover,
+nav a.ativo {
+    color: var(--rosa);
+    border-bottom-color: var(--rosa);
+}
+
+/* Botão do menu (só aparece no celular) */
+.menu-botao {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu-botao span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--texto);
+}
+
+
+/* ============ APRESENTAÇÃO ============ */
+#inicio {
+    min-height: 88vh;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+
+    padding: 60px 8%;
+
+    background:
+        radial-gradient(circle at 85% 25%, rgba(233, 154, 170, 0.18), transparent 50%),
+        var(--fundo);
+}
+
+#inicio h1 {
+    font-size: clamp(44px, 8vw, 96px);
+    line-height: 1.05;
+    max-width: 700px;
+    margin-bottom: 24px;
+}
+
+#inicio .inicio-texto > p:not(.contador) {
+    color: var(--texto-suave);
+    font-size: 20px;
+    max-width: 480px;
+    margin-bottom: 32px;
+}
+
+/* BOTÃO */
+.botao {
+    display: inline-block;
+
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 700;
+
+    border: 2px solid var(--rosa);
+    border-radius: 30px;
+    padding: 12px 26px;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.botao:hover {
+    background-color: var(--rosa);
+    color: var(--fundo);
+}
+
+.contador {
+    margin-top: 28px;
+    color: var(--rosa-claro);
+    font-size: 15px;
+}
+
+
+/* ============ POLAROIDS DO INÍCIO ============ */
+.polaroids {
+    position: relative;
+    height: 440px;
+}
+
+.polaroid {
+    position: absolute;
+    width: 230px;
+
+    background-color: var(--papel);
+    padding: 12px 12px 40px;
+    border-radius: 3px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+
+    transform: rotate(var(--rot));
+    transition: transform 0.5s ease;
+
+    /* Efeito único da página: as fotos caem na mesa quando ela abre */
+    animation: cair 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
+    animation-delay: calc(var(--i) * 0.18s + 0.2s);
+}
+
+.polaroid img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.polaroid:nth-child(1) { top: 0;     left: 4%; }
+.polaroid:nth-child(2) { top: 60px;  left: 38%; }
+.polaroid:nth-child(3) { top: 190px; left: 14%; }
+
+/* Ao passar o mouse, as fotos se abrem como um leque */
+.polaroids:hover .polaroid:nth-child(1) { transform: rotate(-14deg) translate(-24px, -10px); }
+.polaroids:hover .polaroid:nth-child(2) { transform: rotate(10deg)  translate(28px, -6px); }
+.polaroids:hover .polaroid:nth-child(3) { transform: rotate(-3deg)  translate(0, 14px); }
+
+@keyframes cair {
+    from {
+        opacity: 0;
+        transform: translateY(-80px) rotate(0deg);
+    }
+}
+
+
+/* ============ SEÇÕES ============ */
+main section:not(#inicio) {
+    padding: 90px 8%;
+    border-top: 1px solid var(--borda);
+}
+
+section h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--rosa);
+    margin-bottom: 14px;
+}
+
+section > p {
+    color: var(--texto-suave);
+    max-width: 60ch;
+}
+
+
+/* ============ GALERIAS ============ */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 36px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    display: block;
+
+    border-radius: 6px;
+    border: 1px solid var(--borda);
+    cursor: zoom-in;
+
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.03);
+    border-color: var(--rosa);
+}
+
+/* As fotos aparecem de leve quando chegam na tela */
+.js .galeria img {
+    opacity: 0;
+    transition: opacity 0.7s, transform 0.3s, border-color 0.3s;
+}
+
+.js .galeria img.visivel {
+    opacity: 1;
+}
+
+
+/* ============ VÍDEOS ============ */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 36px;
+}
+
+.videos-grid video {
+    width: 100%;
+    max-height: 520px;
+    background-color: #000;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+}
+
+
+/* ============ RODAPÉ ============ */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+
+    background-color: var(--fundo-claro);
+    border-top: 1px solid var(--borda);
+}
+
+footer p {
+    color: var(--texto-suave);
+    margin: 8px;
+    font-size: 15px;
+}
+
+
+/* ============ BOTÃO VOLTAR AO TOPO ============ */
+.topo {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 90;
+
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--rosa);
+    color: var(--fundo);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.topo.visivel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+}
+
+
+/* ============ FOTO AMPLIADA NA TELA ============ */
+.visualizar-foto {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+
+    background: rgba(10, 5, 8, 0.96);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.visualizar-foto.aberto {
+    display: flex;
+}
+
+.visualizar-foto figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+}
+
+.visualizar-foto img {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.visualizar-foto figcaption {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--texto-suave);
+}
+
+#legenda {
+    color: var(--texto);
+    font-weight: 600;
+}
+
+.vf-seta,
+.vf-fechar {
+    background: none;
+    border: none;
+    color: var(--rosa);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.vf-seta {
+    font-size: 64px;
+    line-height: 1;
+    padding: 10px 14px;
+}
+
+.vf-fechar {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 28px;
+    padding: 8px;
+}
+
+.vf-seta:hover,
+.vf-fechar:hover {
+    color: var(--rosa-claro);
+}
+
+
+/* ============ CELULAR ============ */
+@media (max-width: 800px) {
+
+    /* Menu vira botão hambúrguer */
+    .menu-botao {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        gap: 0;
+
+        background-color: var(--fundo);
+        border-bottom: 1px solid var(--borda);
+    }
+
+    nav.aberto {
+        display: flex;
+    }
+
+    nav a {
+        padding: 16px 6%;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    /* Início em uma coluna */
+    #inicio {
+        grid-template-columns: 1fr;
+        padding: 50px 6%;
+    }
+
+    .polaroids {
+        height: 380px;
+    }
+
+    .polaroid {
+        width: 190px;
+    }
+
+    .polaroid img {
+        height: 190px;
+    }
+
+    .polaroid:nth-child(1) { left: 0; }
+    .polaroid:nth-child(2) { left: 42%; }
+    .polaroid:nth-child(3) { top: 170px; left: 12%; }
+
+    main section:not(#inicio) {
+        padding: 70px 6%;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .galeria img {
+        height: 200px;
+    }
+
+    .vf-seta {
+        position: absolute;
+        bottom: 20px;
+        font-size: 48px;
+    }
+
+    #anterior { left: 20px; }
+    #proxima  { right: 20px; }
+}
+
+@media (max-width: 420px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria img {
+        height: 260px;
+    }
+}
+
+
+/* ============ RESPEITA QUEM PREFERE MENOS MOVIMENTO ============ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .js .galeria img {
+        opacity: 1;
+    }
+}

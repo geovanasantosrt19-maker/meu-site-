@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Memória</title>
+
+    <!-- Só ativa os efeitos de aparecer se o JavaScript estiver funcionando -->
+    <script>document.documentElement.classList.add("js");</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <a class="logo" href="#inicio">Minha Memória</a>
+
+        <!-- Botão do menu no celular -->
+        <button class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#minha-pessoa">Minha pessoa</a>
+            <a href="#amigos">Amigos</a>
+            <a href="#familia">Família</a>
+            <a href="#videos">Vídeos</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- APRESENTAÇÃO PRINCIPAL -->
+        <section id="inicio">
+
+            <div class="inicio-texto">
+                <h1>Minha Memória</h1>
+
+                <p>
+                    Um cantinho especial para guardar
+                    tudo o que faz a minha história ser única!
+                </p>
+
+                <a class="botao" href="#videos">▶ Assistir meu vídeo</a>
+
+                <p class="contador" id="contador" hidden></p>
+            </div>
+
+            <!-- Fotos soltas, como polaroids em cima da mesa -->
+            <div class="polaroids" aria-hidden="true">
+                <div class="polaroid" style="--i:0; --rot:-8deg">
+                    <img src="famila.jpeg" alt="" loading="eager">
+                </div>
+                <div class="polaroid" style="--i:1; --rot:5deg">
+                    <img src="hemi.jpeg" alt="" loading="eager">
+                </div>
+                <div class="polaroid" style="--i:2; --rot:-2deg">
+                    <img src="1.jpeg" alt="" loading="eager">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MINHA PESSOA ESPECIAL -->
+        <section id="minha-pessoa">
+
+            <h2>Minha pessoa</h2>
+
+            <p>A mais mais.</p>
+
+            <div class="galeria">
+                <img src="pe.jpeg" alt="Minha pessoa" loading="lazy">
+                <img src="peq.jpeg" alt="Minha pessoa, outro momento" loading="lazy">
+                <img src="pequena.jpeg" alt="Minha pessoa, momento especial" loading="lazy">
+            </div>
+
+        </section>
+
+        <!-- AMIGOS -->
+        <section id="amigos">
+
+            <h2>Amigos</h2>
+
+            <p>
+                Risadas, apoio, parceria
+                e histórias que a vida me deu de presente.
+            </p>
+
+            <div class="galeria">
+                <img src="hemi.jpeg" alt="Hemi" loading="lazy">
+                <img src="raissa.jpeg" alt="Raissa" loading="lazy">
+                <img src="regina.jpeg" alt="Regina" loading="lazy">
+                <img src="ana.jpeg" alt="Ana" loading="lazy">
+                <img src="livia.jpeg" alt="Lívia" loading="lazy">
+                <img src="raiss.jpeg" alt="Raissa, outro momento" loading="lazy">
+                <img src="nem olha na cara uma da outra.jpeg" alt="Nem olha na cara uma da outra" loading="lazy">
+                <img src="igor.jpeg" alt="Igor" loading="lazy">
+                <img src="livv.jpeg" alt="Igor" loading="lazy">
+
+            </div>
+
+        </section>
+
+        <!-- FAMÍLIA -->
+        <section id="familia">
+
+            <h2>Família</h2>
+
+            <p>
+                Meu porto seguro, meu maior amor
+                e minhas maiores alegrias.
+            </p>
+
+            <div class="galeria">
+                <img src="famila.jpeg" alt="Minha família" loading="lazy">
+                <img src="1.jpeg" alt="Momento em família" loading="lazy">
+                <img src="2.jpeg" alt="Momento especial em família" loading="lazy">
+                <img src="3.jpeg" alt="Lembrança em família" loading="lazy">
+                <img src="4.jpeg" alt="Mais uma lembrança em família" loading="lazy">
+                <img src="tia ni.jpeg" alt="Tia Ni" loading="lazy">
+                <img src="cai.jpeg" alt="Cai" loading="lazy">
+                <img src="miguu.jpeg" alt="miguel" loading="lazy">
+                <img src="ayla.jpeg" alt="ayla" loading="lazy">
+                <img src="melissa.jpeg" alt="memel" loading="lazy">
+                <img src="pai.jpeg" alt="pai" loading="lazy">
+                <img src="primos.jpeg" alt="primos" loading="lazy">
+                <img src="fam.jpeg" alt="primos" loading="lazy">  
+            </div>
+
+        </section>
+
+        <!-- VÍDEOS -->
+        <section id="videos">
+
+            <h2>Vídeos</h2>
+
+            <p>Momentos que quero guardar para sempre.</p>
+
+            <div class="videos-grid">
+                <video controls playsinline preload="metadata">
+                    <source src="mi.vid.mp4" type="video/mp4">
+                </video>
+
+                <video controls playsinline preload="metadata">
+                    <source src="v.ro.mp4" type="video/mp4">
+                </video>
+
+                <video controls playsinline preload="metadata">
+                    <source src="v, car.mp4" type="video/mp4">
+                </video>
+
+                <video controls playsinline preload="metadata">
+                    <source src="raisa.mp4" type="video/mp4">
+                </video>
+
+                <video controls playsinline preload="metadata">
+                    <source src="mig.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>
+            Que nunca me faltem motivos
+            para colecionar mais momentos! ♡
+        </p>
+
+        <p>Minha Memória — sempre será meu lugar favorito.</p>
+    </footer>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <a href="#inicio" class="topo" id="topo" aria-label="Voltar ao topo">↑</a>
+
+    <!-- VISUALIZADOR DE FOTOS -->
+    <div class="visualizar-foto" id="visualizador" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+
+        <button class="vf-fechar" id="fechar" aria-label="Fechar foto">✕</button>
+        <button class="vf-seta" id="anterior" aria-label="Foto anterior">‹</button>
+
+        <figure>
+            <img src="" alt="" id="fotoAmpliada">
+            <figcaption>
+                <span id="legenda"></span>
+                <span id="posicao"></span>
+            </figcaption>
+        </figure>
+
+        <button class="vf-seta" id="proxima" aria-label="Próxima foto">›</button>
+
+    </div>
+
+    <script>
+
+        /* ============ CONTADOR DE DIAS ============ */
+        // Troque pela data que você quiser (ano-mês-dia)
+        const DATA_INICIO = new Date("2026-01-01");
+
+        const contador = document.getElementById("contador");
+        const dias = Math.floor((Date.now() - DATA_INICIO) / 86400000);
+
+        if (dias > 0) {
+            contador.textContent = "Há " + dias + " dias colecionando memórias ♡";
+            contador.hidden = false;
+        }
+
+
+        /* ============ MENU DO CELULAR ============ */
+        const menuBotao = document.getElementById("menuBotao");
+        const menu = document.getElementById("menu");
+
+        function alternarMenu(abrir) {
+            menu.classList.toggle("aberto", abrir);
+            menuBotao.setAttribute("aria-expanded", abrir);
+        }
+
+        menuBotao.addEventListener("click", function () {
+            alternarMenu(!menu.classList.contains("aberto"));
+        });
+
+        // Fecha o menu depois de escolher uma seção
+        menu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                alternarMenu(false);
+            });
+        });
+
+
+        /* ============ MENU DESTACA A SEÇÃO ATUAL + BOTÃO TOPO ============ */
+        const secoes = document.querySelectorAll("main section");
+        const links = document.querySelectorAll("nav a");
+        const botaoTopo = document.getElementById("topo");
+
+        function aoRolar() {
+            let atual = "";
+
+            secoes.forEach(function (secao) {
+                if (window.scrollY >= secao.offsetTop - 140) {
+                    atual = secao.id;
+                }
+            });
+
+            links.forEach(function (link) {
+                link.classList.toggle("ativo", link.getAttribute("href") === "#" + atual);
+            });
+
+            botaoTopo.classList.toggle("visivel", window.scrollY > 600);
+        }
+
+        window.addEventListener("scroll", aoRolar, { passive: true });
+        aoRolar();
+
+
+        /* ============ FOTOS APARECEM SUAVEMENTE AO ROLAR ============ */
+        const fotos = Array.from(document.querySelectorAll(".galeria img"));
+
+        const observador = new IntersectionObserver(function (itens) {
+            itens.forEach(function (item) {
+                if (item.isIntersecting) {
+                    item.target.classList.add("visivel");
+                    observador.unobserve(item.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fotos.forEach(function (foto) {
+            observador.observe(foto);
+        });
+
+
+        /* ============ VISUALIZADOR DE FOTOS ============ */
+        const visualizador = document.getElementById("visualizador");
+        const fotoAmpliada = document.getElementById("fotoAmpliada");
+        const legenda = document.getElementById("legenda");
+        const posicao = document.getElementById("posicao");
+
+        let indice = 0;
+        let fotoQueAbriu = null;
+
+        function mostrar(i) {
+            indice = (i + fotos.length) % fotos.length;
+
+            fotoAmpliada.src = fotos[indice].src;
+            fotoAmpliada.alt = fotos[indice].alt;
+            legenda.textContent = fotos[indice].alt;
+            posicao.textContent = (indice + 1) + " / " + fotos.length;
+
+            visualizador.classList.add("aberto");
+            document.body.classList.add("travado");
+        }
+
+        function fechar() {
+            visualizador.classList.remove("aberto");
+            document.body.classList.remove("travado");
+            fotoAmpliada.src = "";
+
+            // Devolve o foco para a foto que estava aberta
+            if (fotoQueAbriu) fotoQueAbriu.focus();
+        }
+
+        fotos.forEach(function (foto, i) {
+            // Deixa as fotos acessíveis pelo teclado (Tab + Enter)
+            foto.tabIndex = 0;
+            foto.setAttribute("role", "button");
+
+            foto.addEventListener("click", function () {
+                fotoQueAbriu = foto;
+                mostrar(i);
+            });
+
+            foto.addEventListener("keydown", function (evento) {
+                if (evento.key === "Enter" || evento.key === " ") {
+                    evento.preventDefault();
+                    fotoQueAbriu = foto;
+                    mostrar(i);
+                }
+            });
+        });
+
+        document.getElementById("anterior").addEventListener("click", function (e) {
+            e.stopPropagation();
+            mostrar(indice - 1);
+        });
+
+        document.getElementById("proxima").addEventListener("click", function (e) {
+            e.stopPropagation();
+            mostrar(indice + 1);
+        });
+
+        document.getElementById("fechar").addEventListener("click", fechar);
+
+        // Fecha ao clicar no fundo escuro
+        visualizador.addEventListener("click", function (e) {
+            if (e.target === visualizador) fechar();
+        });
+
+        // Teclado: ESC fecha, setas trocam de foto
+        document.addEventListener("keydown", function (e) {
+            if (!visualizador.classList.contains("aberto")) return;
+
+            if (e.key === "Escape") fechar();
+            if (e.key === "ArrowLeft") mostrar(indice - 1);
+            if (e.key === "ArrowRight") mostrar(indice + 1);
+        });
+
+        // Celular: deslize para o lado para trocar de foto
+        let toqueInicial = 0;
+
+        visualizador.addEventListener("touchstart", function (e) {
+            toqueInicial = e.changedTouches[0].clientX;
+        }, { passive: true });
+
+        visualizador.addEventListener("touchend", function (e) {
+            const diferenca = e.changedTouches[0].clientX - toqueInicial;
+
+            if (Math.abs(diferenca) > 50) {
+                mostrar(diferenca > 0 ? indice - 1 : indice + 1);
+            }
+        }, { passive: true });
+
+    </script>
+
+</body>
+
+</html>
